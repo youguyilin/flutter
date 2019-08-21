@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'AlignRoute.dart';
+import 'ClipRoute.dart';
+import 'ContainerRoute.dart';
+import 'ContainerTestRouteRoute.dart';
 import 'CouterWidget.dart';
 import 'EchoRoute.dart';
+import 'FlexLayoutTestRoute.dart';
 import 'FormTestRoute.dart';
 import 'NewRoute.dart';
 import 'ColumnAndRow.dart';
@@ -9,6 +14,8 @@ import 'ParentWidget.dart';
 import 'ParentWidgetC.dart';
 import 'ProgressRoute.dart';
 import 'RouterTestRoute.dart';
+import 'ScffoldRoute.dart';
+import 'StackAndPositioned.dart';
 import 'SwitchAndCheckBoxTestRoute.dart';
 import 'TaoboxA.dart';
 import 'TipRoute.dart';
@@ -95,115 +102,115 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-//    return FormTestRoute();
-        return Scaffold(
-        appBar: AppBar(
-          title: Text("Demo"),
-        ),
-        body: Wrap(
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          verticalDirection: VerticalDirection.down,
-          children: <Widget>[
-            Center(
-                child: Text.rich(TextSpan(children: [
-              TextSpan(text: "home: "),
-              TextSpan(
-                  text: "https://flutterchina.club",
-                  style: TextStyle(color: Colors.blue, fontFamily: 'Oswald'),
-                  recognizer: null),
-            ]))),
-            RaisedButton(
-              child: Text("normal"),
-              onPressed: (){},
-            ),
-            FlatButton(
-              child: Text("normal"),
-              onPressed: (){},
-            ),
-            OutlineButton(
-              child: Text("normal"),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(Icons.thumb_up) ,
-              onPressed: (){},
-            ),
-            FlatButton(
-              color: Colors.blue,
-              highlightColor: Colors.blue[700],
-              colorBrightness: Brightness.dark,
-              splashColor: Colors.grey,
-              child: Text("Submit"),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              onPressed: (){},
-            ),
-            Image(image: AssetImage("images/avatar.png"),width: 100.0,color: Colors.blue,colorBlendMode: BlendMode.difference,),
-            Image.network("https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",width: 100.0,),
-            Text("\uE914"+ "\uE000" + "\uE90D",style: TextStyle(fontFamily: "MaterialIcons",fontSize: 24.0,color: Colors.blue),)
-            ,SwitchAndCheckBoxTestRoute(),
-            TextField(
-              focusNode: focusNode1,
-              autofocus: true,
-              decoration: InputDecoration(
-                labelText: "用户名",
-                hintText: "用户名或邮箱",
-                prefixIcon: Icon(Icons.person),
-
-              ),
-            ),
-            TextField(
-              focusNode: focusNode2,
-              decoration: InputDecoration(
-                labelText: "密码",
-                hintText: "您的登录密码",
-                prefixIcon: Icon(Icons.lock)
-              ),
-              obscureText: true,
-            ),
-            Builder(builder: (ctx){
-              return Column(
-                children: <Widget>[
-                  RaisedButton(
-                    child: Text("移动焦点"),
-                    onPressed: () {
-                      //将焦点移动到第二个Textfield
-                      if(null == focusScopeNode){
-                        focusScopeNode = FocusScope.of(context);
-                      }
-                      if(focusNode1.hasFocus) {
-                        focusScopeNode.requestFocus(focusNode2);
-                      }else {
-                        focusScopeNode.requestFocus(focusNode1);
-                      }
-                    },
-                  ),
-                  RaisedButton(
-                    child: Text("隐藏键盘"),
-                    onPressed: (){
-                      //当所有哦编辑框都失去焦点的时候键盘就会收起
-                      focusNode2.unfocus();
-                      focusNode1.unfocus();
-                    },
-                  )
-                ],
-              );
-            }),
-            LinearProgressIndicator(
-              backgroundColor: Colors.grey[200],
-              valueColor: AlwaysStoppedAnimation(Colors.blue),
-            ),
-            LinearProgressIndicator(
-              backgroundColor: Colors.grey[200],
-              valueColor: AlwaysStoppedAnimation(Colors.blue),
-              value: .5,
-            ),
-            CircularProgressIndicator(
-              backgroundColor: Colors.grey[200],
-              valueColor: AlwaysStoppedAnimation(Colors.pink),
-            ),ProgressRoute(),
-          ],
-        ));
+    return ClipRoute();
+//        return Scaffold(
+//        appBar: AppBar(
+//          title: Text("Demo"),
+//        ),
+//        body: Wrap(
+//          alignment: WrapAlignment.center,
+//          runAlignment: WrapAlignment.center,
+//          verticalDirection: VerticalDirection.down,
+//          children: <Widget>[
+//            Center(
+//                child: Text.rich(TextSpan(children: [
+//              TextSpan(text: "home: "),
+//              TextSpan(
+//                  text: "https://flutterchina.club",
+//                  style: TextStyle(color: Colors.blue, fontFamily: 'Oswald'),
+//                  recognizer: null),
+//            ]))),
+//            RaisedButton(
+//              child: Text("normal"),
+//              onPressed: (){},
+//            ),
+//            FlatButton(
+//              child: Text("normal"),
+//              onPressed: (){},
+//            ),
+//            OutlineButton(
+//              child: Text("normal"),
+//              onPressed: () {},
+//            ),
+//            IconButton(
+//              icon: Icon(Icons.thumb_up) ,
+//              onPressed: (){},
+//            ),
+//            FlatButton(
+//              color: Colors.blue,
+//              highlightColor: Colors.blue[700],
+//              colorBrightness: Brightness.dark,
+//              splashColor: Colors.grey,
+//              child: Text("Submit"),
+//              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+//              onPressed: (){},
+//            ),
+//            Image(image: AssetImage("images/avatar.png"),width: 100.0,color: Colors.blue,colorBlendMode: BlendMode.difference,),
+//            Image.network("https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",width: 100.0,),
+//            Text("\uE914"+ "\uE000" + "\uE90D",style: TextStyle(fontFamily: "MaterialIcons",fontSize: 24.0,color: Colors.blue),)
+//            ,SwitchAndCheckBoxTestRoute(),
+//            TextField(
+//              focusNode: focusNode1,
+//              autofocus: true,
+//              decoration: InputDecoration(
+//                labelText: "用户名",
+//                hintText: "用户名或邮箱",
+//                prefixIcon: Icon(Icons.person),
+//
+//              ),
+//            ),
+//            TextField(
+//              focusNode: focusNode2,
+//              decoration: InputDecoration(
+//                labelText: "密码",
+//                hintText: "您的登录密码",
+//                prefixIcon: Icon(Icons.lock)
+//              ),
+//              obscureText: true,
+//            ),
+//            Builder(builder: (ctx){
+//              return Column(
+//                children: <Widget>[
+//                  RaisedButton(
+//                    child: Text("移动焦点"),
+//                    onPressed: () {
+//                      //将焦点移动到第二个Textfield
+//                      if(null == focusScopeNode){
+//                        focusScopeNode = FocusScope.of(context);
+//                      }
+//                      if(focusNode1.hasFocus) {
+//                        focusScopeNode.requestFocus(focusNode2);
+//                      }else {
+//                        focusScopeNode.requestFocus(focusNode1);
+//                      }
+//                    },
+//                  ),
+//                  RaisedButton(
+//                    child: Text("隐藏键盘"),
+//                    onPressed: (){
+//                      //当所有哦编辑框都失去焦点的时候键盘就会收起
+//                      focusNode2.unfocus();
+//                      focusNode1.unfocus();
+//                    },
+//                  )
+//                ],
+//              );
+//            }),
+//            LinearProgressIndicator(
+//              backgroundColor: Colors.grey[200],
+//              valueColor: AlwaysStoppedAnimation(Colors.blue),
+//            ),
+//            LinearProgressIndicator(
+//              backgroundColor: Colors.grey[200],
+//              valueColor: AlwaysStoppedAnimation(Colors.blue),
+//              value: .5,
+//            ),
+//            CircularProgressIndicator(
+//              backgroundColor: Colors.grey[200],
+//              valueColor: AlwaysStoppedAnimation(Colors.pink),
+//            ),ProgressRoute(),
+//          ],
+//        ));
 
 //      Scaffold(
 //      appBar: AppBar(

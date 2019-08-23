@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'AlertDialogRoute.dart';
 import 'AlignRoute.dart';
 import 'ClipRoute.dart';
 import 'ContainerRoute.dart';
@@ -11,12 +12,14 @@ import 'FlexLayoutTestRoute.dart';
 import 'FormTestRoute.dart';
 import 'InfiniteGridView.dart';
 import 'InfiniteListView.dart';
+import 'InheritedWidgetDemo.dart';
 import 'ListViewRoutea.dart';
 import 'NewRoute.dart';
 import 'ColumnAndRow.dart';
 import 'ParentWidget.dart';
 import 'ParentWidgetC.dart';
 import 'ProgressRoute.dart';
+import 'ProviderRoute.dart';
 import 'RouterTestRoute.dart';
 import 'ScffoldRoute.dart';
 import 'ScrollControllerTestRoute.dart';
@@ -25,7 +28,9 @@ import 'SingleChildScrollViewRoute.dart';
 import 'StackAndPositioned.dart';
 import 'SwitchAndCheckBoxTestRoute.dart';
 import 'TaoboxA.dart';
+import 'ThemeTestRoute.dart';
 import 'TipRoute.dart';
+import 'WillPopScopeTestRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -114,13 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
 //    return ClipRoute();
     return
+//      ThemeTestRoute();
 
       Scaffold(
         appBar: AppBar(
           title: Text("Demo"),
         ),
-        body: ScrollNotificationTestRoute(),
-    );
+        body: AlertDialogRoute());
 //    Wrap(
 //          alignment: WrapAlignment.center,
 //          runAlignment: WrapAlignment.center,
